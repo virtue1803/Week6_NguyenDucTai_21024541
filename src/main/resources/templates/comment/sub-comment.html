@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Sub Comment - Blog Website</title>
+
+</head>
+<body>
+<div >
+  <header >
+    <a href="/homepage">Home</a>
+    <a href="/create-new-post">Create new Post</a>
+    <a href="/view-detail-account">Account Information</a>
+    <a href="/log-in">Log out</a>
+  </header>
+  <div >
+    <h3 >Add Sub Comment</h3>
+    <form action="/add-sub-comment" method="post">
+      <input type="hidden" name="postId" th:value="${postDetail.id}">
+      <input type="hidden" name="commentParentId" th:value="${commentDetail.id}">
+      <div >
+        <label >Title:</label>
+        <input  name="title" th:value="${commentDetail.userId.getFullyName()}" readonly required>
+      </div>
+      <div >
+        <label >Content:</label>
+        <input  name="content" required>
+      </div>
+      <div >
+        <label >Published:</label>
+        <select name="published" class="form-select" required>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
+      </div>
+      <div >
+        <button  type="submit">Add Sub Comment</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

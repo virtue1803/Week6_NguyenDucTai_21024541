@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Account - Blog Website</title>
+
+</head>
+<body>
+<div class="container-fluid">
+    <header>
+        <a href="/homepage">Home</a>
+        <a href="/create-new-post">Create new Post</a>
+        <a href="/view-detail-account">Account Information</a>
+        <a href="/log-in">Log out</a>
+    </header>
+    <div >
+        <h3 >Update Account</h3>
+        <form th:action="@{/update-account/{id}(id=${account.id})}" method="post">
+            <div >
+                <label >First Name:</label>
+                <input  name="firstName" th:value="${account.firstName}" required>
+            </div>
+            <div >
+                <label >Middle Name:</label>
+                <input  name="middleName" th:value="${account.middleName}" required>
+            </div>
+            <div >
+                <label >Last Name:</label>
+                <input  name="lastName" th:value="${account.lastName}" required>
+            </div>
+            <div >
+                <label >Mobile:</label>
+                <input type="number"  name="mobile" th:value="${account.mobile}" required>
+            </div>
+            <div>
+                <label >Email:</label>
+                <input type="email" class="form-control" name="email" th:value="${account.email}" required>
+            </div>
+            <div >
+                <label >Intro:</label>
+                <input  name="intro" th:value="${account.intro}" required>
+            </div>
+            <div >
+                <label >Profile:</label>
+                <input  name="profile" th:value="${account.profile}" required>
+            </div>
+            <div >
+                <label >Password:</label>
+                <input  name="password" th:value="${account.passwordHash}" required>
+            </div>
+            <div >
+                <button >Update</button>
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comment Detail - Blog Website</title>
+
+</head>
+<body>
+<div >
+  <div >
+    <header >
+      <a href="/homepage">Home</a>
+      <a href="/create-new-post">Create new Post</a>
+      <a href="/view-detail-account">Account Information</a>
+      <a href="/log-in">Log out</a>
+    </header>
+    <div >
+      <h3 >List Comment</h3>
+      <div  th:each="subComment : ${subComments}">
+        <div >
+          <div >
+            <label >User Name:</label>
+            <input  th:value="${subComment.userId.getFullyName()}" readonly>
+          </div>
+          <div >
+            <label >Title:</label>
+            <input th:value="${subComment.title}" readonly>
+          </div>
+          <div >
+            <label >Content:</label>
+            <p  th:text="${subComment.content}"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

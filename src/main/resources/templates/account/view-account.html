@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>View Account - Blog Website</title>
+
+</head>
+<body>
+<div >
+  <header >
+    <a href="/homepage">Home</a>
+    <a href="/create-new-post">Create new Post</a>
+    <a href="#">Account Information</a>
+    <a href="/log-in">Log out</a>
+  </header>
+  <div >
+    <h3 >Your Account Information</h3>
+    <div >
+      <div >
+        <label >ID Users:</label>
+        <input  th:value="${account.id}">
+      </div>
+      <div >
+        <label >First Name:</label>
+        <input  th:value="${account.firstName}">
+      </div>
+      <div >
+        <label >Middle Name:</label>
+        <input  th:value="${account.middleName}">
+      </div>
+      <div >
+        <label >Last Name:</label>
+        <input  th:value="${account.lastName}">
+      </div>
+      <div >
+        <label >Mobile:</label>
+        <input  th:value="${account.mobile}">
+      </div>
+      <div >
+        <label >Email:</label>
+        <input  th:value="${account.email}">
+      </div>
+      <div >
+        <label >Intro:</label>
+        <input  th:value="${account.intro}">
+      </div>
+      <div >
+        <label >Profile:</label>
+        <input  th:value="${account.profile}">
+      </div>
+      <div class="mb-3 d-flex align-items-center">
+        <label >Password:</label>
+        <input  th:value="${account.passwordHash}">
+      </div>
+      <form action="/update-account" method="get" >
+        <button >Update Account</button>
+      </form>
+    </div>
+  </div>
+</div>
+</body>
+</html>

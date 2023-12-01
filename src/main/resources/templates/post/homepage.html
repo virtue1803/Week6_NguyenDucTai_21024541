@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Blog Website</title>
+
+</head>
+<body>
+<div >
+  <header >
+    <a href="#">Home</a>
+    <a href="/create-new-post">Create new Post</a>
+    <a href="/view-detail-account">Account Information</a>
+    <a href="/log-in">Log out</a>
+  </header>
+  <div >
+    <table >
+      <thead>
+      <tr>
+        <td>ID</td>
+        <td>Post Title</td>
+        <td>Author</td>
+        <td>Created At</td>
+        <td>Updated At</td>
+        <td>Published</td>
+        <td>Amount Of Comments</td>
+        <td></td>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="post : ${listPost}">
+        <td th:text="${post.id}"></td>
+        <td th:text="${post.title}"></td>
+        <td th:text="${post.authorId.getFullyName()}"></td>
+        <td th:text="${post.createdAt}"></td>
+        <td th:text="${post.updatedAt}"></td>
+        <td th:text="${post.publishedAt}"></td>
+        <td th:text="${post.comments.size()}"></td>
+        <td>
+          <form th:action="@{/view-detail/{postId}(postId=${post.id})}" method="get">
+            <button >View Detail</button>
+          </form>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+</body>
+</html>
